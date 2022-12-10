@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from schemas.messanger import SendMessage
+from schemas.messanger import Message
 
 
 router = APIRouter()
@@ -9,8 +9,16 @@ router = APIRouter()
 #         f.write(f"task is done at time {min}\n")
 
 
-@router.post("/eitaa/sendMessage/")
-def send_message(message: SendMessage):
+@router.post("/eitaa/send/")
+def send_message(message: Message):
+    print(message)
+    return {
+        "detail":"done",
+    }
+
+
+@router.post("/eitaa/send-later/")
+def send_message(message: Message):
     print(message)
     return {
         "detail":"done",
