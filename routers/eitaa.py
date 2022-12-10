@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from schemas.messanger import Message, SchedulerMessage
-from core.config import scheduler
+from utils.scheduler import scheduler
 from messanger.eitaa import EitaaMessanger
 
 
