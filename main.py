@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from datetime import datetime
-from routers import eitaa, bale
+from routers import eitaa
 
 
 app = FastAPI()
