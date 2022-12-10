@@ -21,7 +21,7 @@ def send_message(message: SchedulerMessage):
         kwargs={
             'text':message.text, 
             'receiver':message.chat_id,
-            }
+        }
     )    
 
     return {
