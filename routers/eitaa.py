@@ -1,19 +1,29 @@
 from fastapi import APIRouter
 from schemas.messanger import Message, SchedulerMessage
 from core.config import scheduler
+from messanger.eitaa import EitaaMessanger
 
 
 router = APIRouter()
 
 @router.post("/send/")
 def send_message(message: Message):
-    return {
-        "detail":"done",
-    }
+    messanger = EitaaMessanger()
+    resulte = messanger.send_message(text=message.text, receiver=message.chat_id)
+    return resulte
 
 @router.post("/send-later/")
 def send_message(message: SchedulerMessage):
-    # scheduler.add_job(task_func, 'date', run_date=message.date_time, args=[message.date_time])    
+    messanger = EitaaMessanger()
+    scheduler.add_job(
+        messanger.send_message,
+        'date', run_date=message.date_time, 
+        kwargs={
+            'text':message.text, 
+            'receiver':message.chat_id,
+            }
+    )    
+
     return {
-        "detail":"done",
+        "detail":f"message will send at {message.date_time}",
     }
