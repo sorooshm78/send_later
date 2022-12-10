@@ -9,11 +9,11 @@ router = APIRouter()
 @router.post("/send/")
 def send_message(message: Message):
     messanger = EitaaMessanger()
-    resulte = messanger.send_message(text=message.text, receiver=message.chat_id)
-    return resulte
+    result = messanger.send_message(text=message.text, receiver=message.chat_id)
+    return result
 
 @router.post("/send-later/")
-def send_message(message: SchedulerMessage):
+def send_scheduler_message(message: SchedulerMessage):
     messanger = EitaaMessanger()
     scheduler.add_job(
         messanger.send_message,

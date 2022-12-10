@@ -3,9 +3,9 @@ from abc import ABC, abstractmethod
 
 
 class AbstractMessanger(ABC):
-    def get_token(self, key):
-        with open('messanger/secret.json') as secret_file:
-            token = json.load(secret_file)[key]
+    def get_token(self, messanger):
+        with open('messanger/tokens.json') as file:
+            token = json.load(file)[messanger]
 
         return token
 
