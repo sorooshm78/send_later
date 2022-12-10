@@ -1,25 +1,19 @@
 from fastapi import APIRouter
-from schemas.messanger import Message
+from schemas.messanger import Message, SchedulerMessage
+from core.config import scheduler
 
 
 router = APIRouter()
 
-# def task_func(min):
-#     with open("log.txt", "a") as f:
-#         f.write(f"task is done at time {min}\n")
-
-
-@router.post("/eitaa/send/")
+@router.post("/send/")
 def send_message(message: Message):
-    print(message)
     return {
         "detail":"done",
     }
 
-
-@router.post("/eitaa/send-later/")
-def send_message(message: Message):
-    print(message)
+@router.post("/send-later/")
+def send_message(message: SchedulerMessage):
+    # scheduler.add_job(task_func, 'date', run_date=message.date_time, args=[message.date_time])    
     return {
         "detail":"done",
     }
