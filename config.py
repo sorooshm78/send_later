@@ -13,4 +13,4 @@ scheduler = BackgroundScheduler(timezone=timezone(TIME_ZONE))
 scheduler.start()
 
 app = FastAPI()
-app.include_router(eitaa.router, tags="eitaa")
+app.include_router(eitaa.router, tags=["eitaa"])
