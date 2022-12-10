@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from schemas import messanger
+from schemas.messanger import SendMessage
 
 
 router = APIRouter()
@@ -10,7 +10,7 @@ router = APIRouter()
 
 
 @router.post("/eitaa/sendMessage/")
-def send_message(message: messanger.SendMessage):
+def send_message(message: SendMessage):
     print(message)
     return {
         "detail":"done",
