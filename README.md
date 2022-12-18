@@ -1,21 +1,32 @@
 # send_later
 send scheduler message to messanger api by Fast-Api
 
-### Usage
+# Usage
 I am using python "3.10.6" version 
 
 first step clone my project
 ```
 git clone https://github.com/sorooshm78/send_later/
 ```
+## Eitaa
 go to [Eitaa API](https://eitaayar.ir/) website and generate token
 
-so rename messanger/sample_tokens.json to messanger/tokens.json and copy your Token into file 
+enter your token into `messanger/sample_tokens.json`
 ```
 {
     "eitaa": "Your Eitaa Token"
 }
 ```
+## Bale
+go to [Bale API](https://dev.bale.ai/) website and generate token
+
+enter your token into `messanger/sample_tokens.json`
+```
+{
+    "bale": "Your Bale Token"
+}
+```
+so rename `messanger/sample_tokens.json` to `messanger/tokens.json`
 
 and then install requirements  
 ```
