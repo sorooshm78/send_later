@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from schemas.messanger import Message, SchedulerMessage
-from utils.scheduler import scheduler
+from config.scheduler import scheduler
 from messanger.bale import BaleMessanger
 
 
