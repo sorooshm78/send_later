@@ -4,6 +4,9 @@ from setuptools import setup, find_packages
 with open("requirements.txt") as file:
     requirement = file.read().splitlines()
 
+with open("README.md") as file:
+    readme = file.read()
+
 
 setup(
     name="send_later",
@@ -11,11 +14,12 @@ setup(
     author="soroosh",
     url="https://github.com/sorooshm78/send_later",
     description="send later package",
+    long_description=readme,
     packages=find_packages(),
     install_requires=requirement,
     entry_points={
         "console_scripts": [
-            "send_later=send_later.main:main",
+            "send_later=config.main:main",
         ],
     },
 )

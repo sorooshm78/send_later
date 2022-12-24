@@ -1,4 +1,4 @@
-from send_later.main import main
+from config.main import main
 
 
 if __name__ == "__main__":
