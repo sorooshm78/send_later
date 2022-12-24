@@ -8,6 +8,10 @@ first step clone my project
 ```
 git clone https://github.com/sorooshm78/send_later/
 ```
+and then install package 
+```
+pip install .
+```
 ## Eitaa
 go to [Eitaa API](https://eitaayar.ir/) website and generate token
 
@@ -27,11 +31,6 @@ enter your token into `messanger/sample_tokens.json`
 }
 ```
 so rename `messanger/sample_tokens.json` to `messanger/tokens.json`
-
-and then install package 
-```
-pip install .
-```
 
 ### Running the code 
 Just go into the code directory and type 
