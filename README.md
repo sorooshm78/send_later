@@ -28,13 +28,17 @@ enter your token into `messanger/sample_tokens.json`
 ```
 so rename `messanger/sample_tokens.json` to `messanger/tokens.json`
 
-and then install requirements  
+and then install package 
 ```
-pip install -r requirements.txt
+pip install .
 ```
 
 ### Running the code 
 Just go into the code directory and type 
+```
+send_later
+```
+or
 ```
 python main.py
 ```
