@@ -17,6 +17,7 @@ setup(
     long_description=readme,
     packages=find_packages(),
     install_requires=requirement,
+    python_requires="!=3.1.*",
     entry_points={
         "console_scripts": [
             "send_later=config.main:main",
